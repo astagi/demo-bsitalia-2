@@ -1,9 +1,9 @@
 import './demo.entry.scss'
-import { CarouselBI, BackToTop, fontsLoader } from './bootstrap-italia'
+import { CarouselBI, BackToTop, fontsLoader, loadPlugin } from './bootstrap-italia'
 
 
-window.bootstrap = {
-    fontsLoader,
-    CarouselBI,
-    BackToTop,
-}
+loadPlugin(fontsLoader)
+// loadPlugin(CarouselBI)
+loadPlugin(BackToTop)
+
+const carousel = new CarouselBI(document.getElementById('myCarousel'))

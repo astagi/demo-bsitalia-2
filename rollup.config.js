@@ -5,6 +5,7 @@ import scss from 'rollup-plugin-scss'
 import uglify from '@lopatnov/rollup-plugin-uglify'
 import nodeResolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
+import injectProcessEnv from 'rollup-plugin-inject-process-env'
 
 
 export default [
@@ -12,8 +13,8 @@ export default [
     input: 'demo.entry.js',
     output: {
       file: 'dist/js/demo.bundle.min.js',
-      compact: true,
       format: 'iife',
+      compact: true
     },
     plugins: [
       babel({
@@ -25,14 +26,12 @@ export default [
         outputStyle: 'compressed',
         sourceMap: true,
       }),
-      nodeResolve({
-        // use "jsnext:main" if possible
-        // see https://github.com/rollup/rollup/wiki/jsnext:main
-        jsnext: true,
-        main: true,
-      }),
+      nodeResolve(),
       commonjs(),
-      uglify(),
+      injectProcessEnv({
+        NODE_ENV: 'production',
+      }),
+      uglify()
     ],
   }
 ]

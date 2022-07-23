@@ -1,4 +1,5 @@
 import './demo.entry.scss'
+import "./globals"
 import { CarouselBI, Alert, Tooltip, Sticky, InputNumber, BackToTop } from 'bootstrap-italia'
 
 
@@ -7,11 +8,11 @@ const carousel = new CarouselBI(document.getElementById('myCarousel'))
 const alert = new Alert(document.getElementsByClassName('alert')[0])
 
 setTimeout(() => {
-    alert.close()
-}, 35000);
+  alert.close()
+}, 15000);
 
 document.querySelectorAll('.ttp').forEach(el => {
-    new Tooltip(el);
+  new Tooltip(el);
 });
 
 const stickyElement = document.getElementById('sticky');

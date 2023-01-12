@@ -5,18 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./dist/css/demo.min.css" />
-    <title>Bootstrap Italia 2 Demo</title>
+    <link rel="stylesheet" href="./bootstrap-italia/dist/css/bootstrap-italia.min.css" />
+    <title>Bootstrap Italia 2 Demo with Bundle</title>
 </head>
 
 <body>
-    <div id="sticky" class="it-header-slim-wrapper it-header-sticky" data-bs-target="#stickyTrigger1">
+    <div id="sticky" class="it-header-slim-wrapper it-header-sticky" data-bs-toggle="sticky"
+        data-bs-position-type="sticky" data-bs-sticky-class-name="is-sticky">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="it-header-slim-wrapper-content">
                         <a class="d-none d-lg-block navbar-brand" href="#">Questa demo illustra l'utilizzo di Bootstrap
-                            Italia 2</a>
+                            Italia 2 utilizzando il bundle della libreria</a>
                     </div>
                 </div>
             </div>
@@ -53,11 +54,11 @@
                     <div class="card card-bg">
                         <div class="card-body">
                             <h5 class="card-title">La città nuova, Alda Merini</h5>
-                            <p class="card-text"> Ecco un <a href="#" class="ttp" title="Primo tooltip">bianco
+                            <p class="card-text"> Ecco un <a href="#" class="ttp" title="Primo tooltip" data-bs-toggle="tooltip" >bianco
                                     scenario</a><br />
                                 per tratteggiarvi l’accompagnamento<br />
                                 degli oggetti di sfondo che pur vivono.<br />
-                                Non ne sarò <a href="#" class="ttp" title="Secondo tooltip">l’artefice</a>
+                                Non ne sarò <a href="#" class="ttp" title="Secondo tooltip" data-bs-toggle="tooltip" >l’artefice</a>
                                 impaziente.<br />
                                 Berrò alle coppe della nostalgia,<br />
                                 avrò preteso d’ozio nelle lacrime...<br />
@@ -65,7 +66,7 @@
                                 la mia lentezza li esaspera...<br />
                                 La mia lentezza? No, la mia fiducia.<br />
                                 Per adesso è deserto.<br />
-                                <a href="#" class="ttp" title="Terzo tooltip">Il mondo può rifarsi senza me</a>,<br />
+                                <a href="#" class="ttp" title="Terzo tooltip" data-bs-toggle="tooltip" >Il mondo può rifarsi senza me</a>,<br />
                                 E intanto gli altri mi denigreranno
                             </p>
                             <a class="read-more" href="#">
@@ -84,18 +85,18 @@
         Questo è un alert con un esempio di <a href="#" class="alert-link">link</a> evidenziato.
     </div>
     <div>
-        <label for="inputNumber3" class="input-number-label">Fai una donazione</label>
+        <label for="inputNumber3" class="input-number-label">Currency</label>
         <span class="input-number input-number-currency">
-            <input type="number" id="inputNumber3" name="inputNumber3" step="any" value="3.50" min="0" />
-            <button class="input-number-add">
-                <span class="visually-hidden">Aumenta valore Euro</span>
-            </button>
-            <button class="input-number-sub">
-                <span class="visually-hidden">Diminuisci valore Euro</span>
-            </button>
+          <input type="number" data-bs-input id="inputNumber3" name="inputNumber3" step="any" value="3.50" min="0" />
+          <button class="input-number-add">
+            <span class="visually-hidden">Aumenta valore Euro</span>
+          </button>
+          <button class="input-number-sub">
+            <span class="visually-hidden">Diminuisci valore Euro</span>
+          </button>
         </span>
     </div>
-    <div id="myCarousel" class="it-carousel-wrapper it-carousel-landscape-abstract-three-cols splide">
+    <div id="myCarousel" class="it-carousel-wrapper it-carousel-landscape-abstract-three-cols splide" data-bs-carousel-splide>
         <div class="splide__track">
             <ul class="splide__list">
                 <li class="splide__slide">
@@ -205,16 +206,22 @@
             </ul>
         </div>
     </div>
-    <div class="notification with-icon success" role="alert" aria-labelledby="not1d-title" id="copyToast">
-        <h2 id="not1d-title" class="h5 "><svg class="icon"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-check-circle"></use></svg>Codice copiato negli appunti</h2>
-    </div>
     <a href="#" aria-hidden="true" data-bs-toggle="backtotop" class="back-to-top back-to-top-small">
         <svg class="icon icon-light">
             <use href="node_modules/bootstrap-italia/dist/svg/sprites.svg#it-arrow-up"></use>
         </svg>
     </a>
     <footer class="py-4"></footer>
-    <script src="./dist/js/demo.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="./bootstrap-italia/dist/js/bootstrap-italia.min.js"></script>
 </body>
+
+<script>
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
 
 </html>

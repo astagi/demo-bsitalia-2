@@ -25,6 +25,6 @@
     "terser": "^5.12.1"
   },
   "dependencies": {
-    "bootstrap-italia": "^2.0.9"
+    "bootstrap-italia": "./bootstrap-italia"
   }
 }

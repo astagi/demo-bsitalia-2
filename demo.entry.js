@@ -1,9 +1,9 @@
 import './demo.entry.scss'
 import "./globals"
-import { CarouselBI, Alert, Tooltip, Sticky, InputNumber, BackToTop } from 'bootstrap-italia'
+import { CarouselBI, Alert, Notification, Tooltip, Sticky, InputNumber, BackToTop, loadFonts } from 'bootstrap-italia'
 
 
-const carousel = new CarouselBI(document.getElementById('myCarousel'))
+new CarouselBI(document.getElementById('myCarousel'))
 
 const alert = new Alert(document.getElementsByClassName('alert')[0])
 
@@ -23,6 +23,13 @@ const sticky = new Sticky(stickyElement, {
   paddingTop: 0,
 });
 
-const inputNumber = new InputNumber(document.getElementById('inputNumber3'))
+new InputNumber(document.getElementById('inputNumber3'))
 
-const backToTop = new BackToTop(document.getElementsByClassName('back-to-top')[0])
+new BackToTop(document.getElementsByClassName('back-to-top')[0])
+
+const notification = new Notification(document.getElementById("copyToast"), {
+  timeout: 2000
+})
+notification.show()
+
+loadFonts();

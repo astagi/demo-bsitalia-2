@@ -1,6 +1,6 @@
 import './demo.entry.scss'
 import "./globals"
-import { CarouselBI, Alert, Notification, Tooltip, Sticky, InputNumber, BackToTop, loadFonts } from './bootstrap-italia'
+import { CarouselBI, Alert, Notification, Tooltip, Sticky, InputNumber, BackToTop, loadFonts } from 'bootstrap-italia'
 
 
 new CarouselBI(document.getElementById('myCarousel'))

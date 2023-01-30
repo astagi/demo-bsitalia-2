@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./bootstrap-italia/dist/css/bootstrap-italia.min.css" />
+    <link rel="stylesheet" href="/node_modules/bootstrap-italia/dist/css/bootstrap-italia.min.css" />
     <title>Bootstrap Italia 2 Demo with Bundle</title>
 </head>
 
@@ -40,7 +40,18 @@
                         <p class="d-none d-lg-block">Platea dictumst vestibulum rhoncus est pellentesque elit
                             ullamcorper dignissim cras. Dictum sit amet justo donec enim diam vulputate ut. Eu nisl nunc
                             mi ipsum faucibus.</p>
-                        <div class="it-btn-container"><a class="btn btn-sm btn-secondary" href="#">Label button</a>
+                        <div class="it-btn-container">
+                            <button
+                                type="button"
+                                class="btn btn-secondary fade show example-popover"
+                                data-container="body"
+                                data-bs-toggle="popover"
+                                data-bs-placement="top"
+                                title="Titolo del Popover"
+                                data-bs-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel finibus augue."
+                          >
+                            Popover in alto
+                          </button>
                         </div>
                     </div>
                 </div>
@@ -214,13 +225,17 @@
     <footer class="py-4"></footer>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <script src="./bootstrap-italia/dist/js/bootstrap-italia.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="/node_modules/bootstrap-italia/dist/js/bootstrap-italia.min.js"></script>
 </body>
 
 <script>
     const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl)
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+    const popover = new bootstrap.Popover(document.querySelector('.example-popover'), {
+        container: 'body',
     })
 </script>
 

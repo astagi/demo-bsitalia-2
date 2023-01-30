@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./bootstrap-italia/dist/css/bootstrap-italia.min.css" />
+    <link rel="stylesheet" href="/node_modules/bootstrap-italia/dist/css/bootstrap-italia.min.css" />
     <title>Bootstrap Italia 2 Demo with Bundle</title>
 </head>
 
@@ -212,13 +212,13 @@
         </svg>
     </a>
     <footer class="py-4"></footer>
-    <script src="./bootstrap-italia/dist/js/bootstrap-italia.bundle.min.js"></script>
+    <script src="/node_modules/bootstrap-italia/dist/js/bootstrap-italia.bundle.min.js"></script>
 </body>
 
 <script>
     const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl)
+        return new bootstrap.Tooltip(tooltipTriggerEl)
     })
 </script>
 

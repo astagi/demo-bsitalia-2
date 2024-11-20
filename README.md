@@ -1,5 +1,7 @@
 ## Utilizzare Bootstrap Italia 2
 
+⚠️ Repository archiviato. Un esempio più aggiornato si trova [qui](https://github.com/astagi/demo-communitylabs-bsi)
+
 Vista la modularità con la quale è strutturato Bootstrap Italia 2, è possibile 
 utilizzare Rollup per includere i componenti desiderati per la propria applicazione
 e ottimizzare il bundle finale. La stessa cosa è possibile farla per la parte css.
